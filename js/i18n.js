@@ -1,0 +1,107 @@
+/* palette-studio-bd -- EN / BN strings. Bengali as \uXXXX escapes (pure ASCII file). */
+(function (global) {
+  'use strict';
+  var BN_DIGITS = ['\u09e6', '\u09e7', '\u09e8', '\u09e9', '\u09ea', '\u09eb', '\u09ec', '\u09ed', '\u09ee', '\u09ef'];
+  function bnDigits(s) {
+    return String(s).replace(/[0-9]/g, function (d) { return BN_DIGITS[parseInt(d, 10)]; });
+  }
+  var STR = {
+    en: {
+      title: 'Palette Studio BD',
+      subtitle: 'Build color palettes, check contrast, export CSS. Fully offline.',
+      langBtn: 'Bangla',
+      baseLabel: 'Base color',
+      hexLabel: 'Hex',
+      randomBtn: 'Random color',
+      invalidHex: 'Invalid hex. Use #RRGGBB, e.g. #2563EB.',
+      harmonyLabel: 'Color harmony',
+      harmony: {
+        COMPLEMENTARY: 'Complementary',
+        ANALOGOUS: 'Analogous',
+        TRIADIC: 'Triadic',
+        TETRADIC: 'Tetradic',
+        SPLIT: 'Split-Complementary'
+      },
+      harmonyHint: 'Click any swatch to copy its hex.',
+      copied: 'Copied',
+      scaleLabel: 'Shades & tints (black to white through base)',
+      contrastLabel: 'Contrast checker',
+      fgLabel: 'Foreground',
+      bgLabel: 'Background',
+      ratioLabel: 'Contrast ratio',
+      aaNormal: 'AA normal text (4.5:1)',
+      aaLarge: 'AA large text (3:1)',
+      aaaNormal: 'AAA normal text (7:1)',
+      aaaLarge: 'AAA large text (4.5:1)',
+      pass: 'Pass',
+      fail: 'Fail',
+      contrastNote: 'WCAG thresholds: AA needs 4.5:1 (normal) / 3:1 (large); AAA needs 7:1 (normal) / 4.5:1 (large). The ratio below is computed, not a guarantee for all uses.',
+      exportLabel: 'Export palette',
+      exportCss: 'Export as CSS variables',
+      exportJson: 'Export as JSON',
+      copyExport: 'Copy export',
+      savedLabel: 'Saved palettes',
+      paletteName: 'Palette name',
+      saveBtn: 'Save palette',
+      savedEmpty: 'No saved palettes yet.',
+      loadBtn: 'Load',
+      deleteBtn: 'Delete',
+      eraseLabel: 'Erase everything',
+      eraseHint: 'Type DELETE to erase all saved palettes.',
+      eraseBtn: 'Erase',
+      eraseDone: 'All saved palettes erased.',
+      eraseWrong: 'Type DELETE exactly.',
+      footer: 'Offline color tool. Contrast ratios follow the WCAG relative-luminance formula.',
+      nameRequired: 'Give the palette a name first.'
+    },
+    bn: {
+      title: '\u09aa\u09cd\u09af\u09be\u09b2\u09c7\u099f \u09b8\u09cd\u099f\u09c1\u09a1\u09bf\u0993 \u09ac\u09bf\u09a1\u09bf',
+      subtitle: '\u09b0\u0999\u09c7\u09b0 \u09aa\u09cd\u09af\u09be\u09b2\u09c7\u099f \u09ac\u09be\u09a8\u09be\u09a8, \u0995\u09a8\u099f\u09cd\u09b0\u09be\u09b8\u09cd\u099f \u09aa\u09b0\u09c0\u0995\u09cd\u09b7\u09be \u0995\u09b0\u09c1\u09a8, CSS \u098f\u0995\u09cd\u09b8\u09aa\u09cb\u09b0\u09cd\u099f \u0995\u09b0\u09c1\u09a8\u0964 \u09b8\u09ae\u09cd\u09aa\u09c2\u09b0\u09cd\u09a3 \u0985\u09ab\u09b2\u09be\u0987\u09a8\u0964',
+      langBtn: 'English',
+      baseLabel: '\u09ae\u09c2\u09b2 \u09b0\u0982',
+      hexLabel: '\u09b9\u09c7\u0995\u09cd\u09b8',
+      randomBtn: '\u098f\u09b2\u09cb\u09ae\u09c7\u09b2\u09cb \u09b0\u0982',
+      invalidHex: '\u0985\u09ac\u09c8\u09a7 \u09b9\u09c7\u0995\u09cd\u09b8\u0964 #RRGGBB \u09ac\u09cd\u09af\u09ac\u09b9\u09be\u09b0 \u0995\u09b0\u09c1\u09a8, \u09af\u09c7\u09ae\u09a8 #2563EB\u0964',
+      harmonyLabel: '\u09b0\u0999\u09c7\u09b0 \u09b8\u09be\u09ae\u099e\u09cd\u099c\u09b8\u09cd\u09af',
+      harmony: {
+        COMPLEMENTARY: '\u09aa\u09b0\u09bf\u09aa\u09c2\u09b0\u0995',
+        ANALOGOUS: '\u0985\u09a8\u09c1\u09b0\u09c2\u09aa',
+        TRIADIC: '\u09a4\u09cd\u09b0\u09df\u09c0',
+        TETRADIC: '\u099a\u09be\u09b0 \u09b0\u0982\u09c7\u09b0',
+        SPLIT: '\u09ac\u09bf\u09ad\u0995\u09cd\u09a4 \u09aa\u09b0\u09bf\u09aa\u09c2\u09b0\u0995'
+      },
+      harmonyHint: '\u09b9\u09c7\u0995\u09cd\u09b8 \u0995\u09aa\u09bf \u0995\u09b0\u09a4\u09c7 \u09af\u09c7 \u0995\u09cb\u09a8\u09cb \u09b8\u09cb\u09df\u09be\u099a\u09c7 \u0995\u09cd\u09b2\u09bf\u0995 \u0995\u09b0\u09c1\u09a8\u0964',
+      copied: '\u0995\u09aa\u09bf \u09b9\u09df\u09c7\u099b\u09c7',
+      scaleLabel: '\u099b\u09be\u09df\u09be \u0993 \u0986\u09b2\u09cb (\u0995\u09be\u09b2\u09cb \u09a5\u09c7\u0995\u09c7 \u09b8\u09be\u09a6\u09be \u09aa\u09b0\u09cd\u09af\u09a8\u09cd\u09a4, \u09ae\u09c2\u09b2 \u09b0\u0982\u09c7\u09b0 \u09ae\u09a7\u09cd\u09af \u09a6\u09bf\u09df\u09c7)',
+      contrastLabel: '\u0995\u09a8\u099f\u09cd\u09b0\u09be\u09b8\u09cd\u099f \u09aa\u09b0\u09c0\u0995\u09cd\u09b7\u09b9',
+      fgLabel: '\u09b8\u09be\u09ae\u09a8\u09c7\u09b0 \u09b0\u0982',
+      bgLabel: '\u09aa\u09c7\u099b\u09a8\u09c7\u09b0 \u09b0\u0982',
+      ratioLabel: '\u0995\u09a8\u099f\u09cd\u09b0\u09be\u09b8\u09cd\u099f \u0985\u09a8\u09c1\u09aa\u09be\u09a4',
+      aaNormal: 'AA \u09b8\u09be\u09a7\u09be\u09b0\u09a3 \u09b2\u09c7\u0996\u09be (4.5:1)',
+      aaLarge: 'AA \u09ac\u09a1\u09bc \u09b2\u09c7\u0996\u09be (3:1)',
+      aaaNormal: 'AAA \u09b8\u09be\u09a7\u09be\u09b0\u09a3 \u09b2\u09c7\u0996\u09be (7:1)',
+      aaaLarge: 'AAA \u09ac\u09a1\u09bc \u09b2\u09c7\u0996\u09be (4.5:1)',
+      pass: '\u09aa\u09be\u09b8',
+      fail: '\u09ab\u09c7\u09b2',
+      contrastNote: 'WCAG \u09b8\u09c0\u09ae\u09be: AA-\u098f\u09b0 \u099c\u09a8\u09cd\u09af 4.5:1 (\u09b8\u09be\u09a7\u09be\u09b0\u09a3) / 3:1 (\u09ac\u09a1\u09bc); AAA-\u098f\u09b0 \u099c\u09a8\u09cd\u09af 7:1 (\u09b8\u09be\u09a7\u09be\u09b0\u09a3) / 4.5:1 (\u09ac\u09a1\u09bc) \u09a6\u09b0\u0995\u09be\u09b0\u0964 \u09a8\u09bf\u099a\u09c7\u09b0 \u0985\u09a8\u09c1\u09aa\u09be\u09a4 \u0997\u09a3\u09a8\u09be \u0995\u09b0\u09be, \u09b8\u09ac \u0995\u09cd\u09b7\u09c7\u09a4\u09cd\u09b0\u09c7 \u0997\u09cd\u09af\u09be\u09b0\u09be\u09a8\u09cd\u099f\u09bf \u09a8\u09df\u0964',
+      exportLabel: '\u09aa\u09cd\u09af\u09be\u09b2\u09c7\u099f \u098f\u0995\u09cd\u09b8\u09aa\u09cb\u09b0\u09cd\u099f',
+      exportCss: 'CSS \u09ad\u09c7\u09b0\u09bf\u09af\u09bc\u09c7\u09ac\u09b2 \u09b9\u09bf\u09b8\u09c7\u09ac\u09c7 \u098f\u0995\u09cd\u09b8\u09aa\u09cb\u09b0\u09cd\u099f',
+      exportJson: 'JSON \u09b9\u09bf\u09b8\u09c7\u09ac\u09c7 \u098f\u0995\u09cd\u09b8\u09aa\u09cb\u09b0\u09cd\u099f',
+      copyExport: '\u098f\u0995\u09cd\u09b8\u09aa\u09cb\u09b0\u09cd\u099f \u0995\u09aa\u09bf \u0995\u09b0\u09c1\u09a8',
+      savedLabel: '\u09b8\u0982\u09b0\u0995\u09cd\u09b7\u09bf\u09a4 \u09aa\u09cd\u09af\u09be\u09b2\u09c7\u099f',
+      paletteName: '\u09aa\u09cd\u09af\u09be\u09b2\u09c7\u099f\u09c7\u09b0 \u09a8\u09be\u09ae',
+      saveBtn: '\u09aa\u09cd\u09af\u09be\u09b2\u09c7\u099f \u09b8\u0982\u09b0\u0995\u09cd\u09b7\u09a3',
+      savedEmpty: '\u098f\u0996\u09a8\u09cb \u0995\u09cb\u09a8\u09cb \u09aa\u09cd\u09af\u09be\u09b2\u09c7\u099f \u09b8\u0982\u09b0\u0995\u09cd\u09b7\u09bf\u09a4 \u09a8\u09c7\u0987\u0964',
+      loadBtn: '\u09b2\u09cb\u09a1',
+      deleteBtn: '\u09ae\u09c1\u099b\u09c1\u09a8',
+      eraseLabel: '\u09b8\u09ac \u09ae\u09c1\u099b\u09c7 \u09ab\u09c7\u09b2\u09c1\u09a8',
+      eraseHint: '\u09b8\u0982\u09b0\u0995\u09cd\u09b7\u09bf\u09a4 \u09b8\u09ac \u09aa\u09cd\u09af\u09be\u09b2\u09c7\u099f \u09ae\u09c1\u099b\u09a4\u09c7 DELETE \u09b2\u09bf\u0996\u09c1\u09a8\u0964',
+      eraseBtn: '\u09ae\u09c1\u099b\u09c7 \u09ab\u09c7\u09b2\u09c1\u09a8',
+      eraseDone: '\u09b8\u0982\u09b0\u0995\u09cd\u09b7\u09bf\u09a4 \u09b8\u09ac \u09aa\u09cd\u09af\u09be\u09b2\u09c7\u099f \u09ae\u09c1\u099b\u09be \u09b9\u09df\u09c7\u099b\u09c7\u0964',
+      eraseWrong: 'DELETE \u09b9\u09c1\u09ac\u09b9\u09c1 \u09b2\u09bf\u0996\u09c1\u09a8\u0964',
+      footer: '\u0985\u09ab\u09b2\u09be\u0987\u09a8 \u09b0\u0999\u09c7\u09b0 \u099f\u09c1\u09b2\u0964 \u0995\u09a8\u099f\u09cd\u09b0\u09be\u09b8\u09cd\u099f \u0985\u09a8\u09c1\u09aa\u09be\u09a4 WCAG \u0986\u09aa\u09c7\u0995\u09cd\u09b7\u09bf\u0995 \u0989\u099c\u09cd\u099c\u09cd\u09ac\u09b2\u09a4\u09be\u09b0 \u09b8\u09c2\u09a4\u09cd\u09b0 \u0985\u09a8\u09c1\u09b8\u09be\u09b0\u09c7 \u0997\u09a3\u09a8\u09be \u0995\u09b0\u09be \u09b9\u09df\u0964',
+      nameRequired: '\u0986\u0997\u09c7 \u09aa\u09cd\u09af\u09be\u09b2\u09c7\u099f\u09c7\u09b0 \u098f\u0915\u099f\u09bf \u09a8\u09be\u09ae \u09a6\u09bf\u09a8\u0964'
+    }
+  };
+  global.PALETTE_I18N = { STR: STR, bnDigits: bnDigits };
+})(typeof window !== 'undefined' ? window : globalThis);

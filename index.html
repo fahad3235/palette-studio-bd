@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Palette Studio BD</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="top">
+  <div>
+    <h1 id="appTitle">Palette Studio BD</h1>
+    <p id="appSubtitle" class="subtitle">Build color palettes, check contrast, export CSS. Fully offline.</p>
+  </div>
+  <button id="langBtn" class="btn secondary" type="button">Bangla</button>
+</header>
+
+<main>
+  <section class="card">
+    <h2 id="baseLabel">Base color</h2>
+    <div class="row gap">
+      <input id="baseColor" type="color" value="#2563EB" aria-label="Base color picker">
+      <label class="field"><span id="hexLabel">Hex</span>
+        <input id="baseHex" type="text" value="#2563EB" maxlength="7" spellcheck="false">
+      </label>
+      <button id="randomBtn" class="btn" type="button">Random color</button>
+    </div>
+    <p id="baseError" class="error" hidden></p>
+  </section>
+
+  <section class="card">
+    <h2 id="harmonyLabel">Color harmony</h2>
+    <div id="harmonyBtns" class="row gap wrap"></div>
+    <p id="harmonyHint" class="hint">Click any swatch to copy its hex.</p>
+    <div id="harmonyRow" class="swatches"></div>
+    <p id="copyMsg" class="ok" hidden></p>
+  </section>
+
+  <section class="card">
+    <h2 id="scaleLabel">Shades &amp; tints (black to white through base)</h2>
+    <div id="scaleRow" class="swatches"></div>
+  </section>
+
+  <section class="card">
+    <h2 id="contrastLabel">Contrast checker</h2>
+    <div class="contrast-grid">
+      <label class="field"><span id="fgLabel">Foreground</span>
+        <span class="row gap"><input id="fgColor" type="color" value="#FFFFFF" aria-label="Foreground color picker">
+        <input id="fgHex" type="text" value="#FFFFFF" maxlength="7" spellcheck="false"></span>
+      </label>
+      <label class="field"><span id="bgLabel">Background</span>
+        <span class="row gap"><input id="bgColor" type="color" value="#2563EB" aria-label="Background color picker">
+        <input id="bgHex" type="text" value="#2563EB" maxlength="7" spellcheck="false"></span>
+      </label>
+    </div>
+    <p class="ratio"><span id="ratioLabel">Contrast ratio</span>: <strong id="contrastRatio">--</strong></p>
+    <ul class="badges">
+      <li><span id="aaNormalLabel">AA normal text (4.5:1)</span> <span id="aaNormalBadge" class="badge">--</span></li>
+      <li><span id="aaLargeLabel">AA large text (3:1)</span> <span id="aaLargeBadge" class="badge">--</span></li>
+      <li><span id="aaaNormalLabel">AAA normal text (7:1)</span> <span id="aaaNormalBadge" class="badge">--</span></li>
+      <li><span id="aaaLargeLabel">AAA large text (4.5:1)</span> <span id="aaaLargeBadge" class="badge">--</span></li>
+    </ul>
+    <p id="contrastNote" class="hint">WCAG thresholds: AA needs 4.5:1 (normal) / 3:1 (large); AAA needs 7:1 (normal) / 4.5:1 (large). The ratio below is computed, not a guarantee for all uses.</p>
+    <p id="contrastError" class="error" hidden></p>
+  </section>
+
+  <section class="card">
+    <h2 id="exportLabel">Export palette</h2>
+    <div class="row gap wrap">
+      <button id="exportCssBtn" class="btn" type="button">Export as CSS variables</button>
+      <button id="exportJsonBtn" class="btn" type="button">Export as JSON</button>
+      <button id="copyExportBtn" class="btn secondary" type="button">Copy export</button>
+    </div>
+    <textarea id="exportOut" rows="8" readonly placeholder="Export output appears here"></textarea>
+  </section>
+
+  <section class="card">
+    <h2 id="savedLabel">Saved palettes</h2>
+    <div class="row gap wrap">
+      <label class="field grow"><span id="paletteNameLabel">Palette name</span>
+        <input id="paletteName" type="text" maxlength="80" placeholder="My palette">
+      </label>
+      <button id="saveBtn" class="btn" type="button">Save palette</button>
+    </div>
+    <p id="saveMsg" class="error" hidden></p>
+    <ul id="savedList" class="saved"></ul>
+    <p id="savedEmpty" class="hint">No saved palettes yet.</p>
+  </section>
+
+  <section class="card danger">
+    <h2 id="eraseLabel">Erase everything</h2>
+    <p id="eraseHint" class="hint">Type DELETE to erase all saved palettes.</p>
+    <div class="row gap wrap">
+      <input id="eraseInput" type="text" placeholder="DELETE" maxlength="10">
+      <button id="eraseBtn" class="btn danger" type="button">Erase</button>
+    </div>
+    <p id="eraseMsg" class="ok" hidden></p>
+  </section>
+</main>
+
+<footer><p id="footerText">Offline color tool. Contrast ratios follow the WCAG relative-luminance formula.</p></footer>
+
+<script src="js/logic.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
